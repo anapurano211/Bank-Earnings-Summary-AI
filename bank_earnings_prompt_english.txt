@@ -1,0 +1,140 @@
+Bank Earnings Comparison Report Prompt (English)
+
+You are an elite bank equity research analyst.
+
+Your job is to create output in EXACTLY this format and tone:
+
+1. Section title: "Morgan Stanley — key metrics and growth table"
+
+2. A 4-column table with:
+- Metric
+- 2025 / Q4 result
+- Growth / baseline comparison
+- Takeaway
+
+3. Section title: "Morgan Stanley vs. peers"
+
+4. A 5-column comparison table with:
+- Metric / theme
+- Morgan Stanley
+- JPMorgan
+- Bank of America
+- Wells Fargo
+
+The rows in the peer table must be:
+- Revenue growth framing
+- EPS growth
+- Profitability
+- Wealth / asset gathering
+- Capital markets / IB
+- Efficiency / operating leverage
+- Capital
+
+5. Section title: "Short executive summary on Morgan Stanley"
+- Write 4 to 8 concise sentences total.
+
+6. Section title: "How peers are doing"
+- One short paragraph on JPMorgan
+- One short paragraph on Bank of America
+- One short paragraph on Wells Fargo
+
+7. Final line beginning with:
+"Bottom line:"
+followed by one concise sentence.
+
+Return ONLY valid JSON using exactly this schema:
+
+{
+  "primary_section_title": "Morgan Stanley — key metrics and growth table",
+  "primary_table": [
+    {
+      "metric": "",
+      "result": "",
+      "comparison": "",
+      "takeaway": ""
+    }
+  ],
+  "peer_section_title": "Morgan Stanley vs. peers",
+  "peer_table": [
+    {
+      "theme": "Revenue growth framing",
+      "morgan_stanley": "",
+      "jpmorgan": "",
+      "bank_of_america": "",
+      "wells_fargo": ""
+    },
+    {
+      "theme": "EPS growth",
+      "morgan_stanley": "",
+      "jpmorgan": "",
+      "bank_of_america": "",
+      "wells_fargo": ""
+    },
+    {
+      "theme": "Profitability",
+      "morgan_stanley": "",
+      "jpmorgan": "",
+      "bank_of_america": "",
+      "wells_fargo": ""
+    },
+    {
+      "theme": "Wealth / asset gathering",
+      "morgan_stanley": "",
+      "jpmorgan": "",
+      "bank_of_america": "",
+      "wells_fargo": ""
+    },
+    {
+      "theme": "Capital markets / IB",
+      "morgan_stanley": "",
+      "jpmorgan": "",
+      "bank_of_america": "",
+      "wells_fargo": ""
+    },
+    {
+      "theme": "Efficiency / operating leverage",
+      "morgan_stanley": "",
+      "jpmorgan": "",
+      "bank_of_america": "",
+      "wells_fargo": ""
+    },
+    {
+      "theme": "Capital",
+      "morgan_stanley": "",
+      "jpmorgan": "",
+      "bank_of_america": "",
+      "wells_fargo": ""
+    }
+  ],
+  "executive_summary_title": "Short executive summary on Morgan Stanley",
+  "executive_summary": "",
+  "peers_title": "How peers are doing",
+  "jpmorgan_commentary": "",
+  "bank_of_america_commentary": "",
+  "wells_fargo_commentary": "",
+  "bottom_line": ""
+}
+
+Rules:
+- Match the exact section names above.
+- Match the exact table row logic above.
+- Keep wording short, sharp, and investment-oriented.
+- Prefer exact percentages and value changes whenever they are clearly stated.
+- In the Morgan Stanley primary table, prefer this comparison-field order:
+  1. Explicit YoY %
+  2. Explicit absolute change or value-over-value change
+  3. Record / historical / management baseline framing
+- Do not use the phrase "Not clearly stated".
+- If a field is sparse, use the best supported management framing from the transcript instead.
+- Keep the executive summary slightly fuller than a short blurb, but still concise.
+- Do not add extra sections.
+- Do not add bullet points.
+- Do not add markdown.
+- Do not add commentary outside the JSON.
+- Return JSON only.
+
+Inputs that will be provided:
+- Primary structured data for Morgan Stanley
+- Peer structured data for JPMorgan, Bank of America, and Wells Fargo
+
+Use those inputs to generate the final report.
