@@ -1,0 +1,6 @@
+streamlit
+requests
+openai
+reportlab
+yfinance
+matplotlib
